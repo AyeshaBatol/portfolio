@@ -1,17 +1,17 @@
 /* Base Styles - Enhanced */
 :root {
-    --primary: #000000;
-    --secondary: #FFFFFF;
-    --accent: #FF4D4D;
-    --accent2: #FFD166;
-    --bg: #0A0A0A;
-    --text: #E0E0E0;
-    --text-secondary: #A0A0A0;
-    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    --section-spacing: 80px;
-    --border-radius: 12px;
-    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    --box-shadow-hover: 0 15px 30px rgba(255, 77, 77, 0.15);
+    --primary: #000000 !important;
+    --secondary: #FFFFFF !important;
+    --accent: #FF4D4D !important;
+    --accent2: #FFD166 !important;
+    --bg: #0A0A0A !important;
+    --text: #E0E0E0 !important;
+    --text-secondary: #A0A0A0 !important;
+    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    --section-spacing: 80px !important;
+    --border-radius: 12px !important;
+    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+    --box-shadow-hover: 0 15px 30px rgba(255, 77, 77, 0.15) !important;
 }
 
 * {
@@ -271,15 +271,15 @@ a {
     padding: 15px 0;
     z-index: 1000;
     transition: var(--transition);
-    backdrop-filter: blur(8px);
-    background-color: rgba(10, 10, 10, 0.6);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px) !important;
+    background-color: rgba(10, 10, 10, 0.6) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
 }
 
 .navbar.scrolled {
     padding: 10px 0;
-    background-color: rgba(10, 10, 10, 0.95);
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    background-color: rgba(10, 10, 10, 0.95) !important;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15) !important;
 }
 
 .navbar .container {
@@ -925,11 +925,7 @@ a {
     width: 100%;
     max-width: 400px;
     margin-left: auto;
-    transition: var(--transition);
-}
-
-.image-frame:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
 }
 
 .image-frame img {
@@ -950,11 +946,6 @@ a {
     border-radius: var(--border-radius);
     z-index: -1;
     transition: var(--transition);
-}
-
-.image-frame:hover .frame-decoration {
-    top: -12px;
-    left: -12px;
 }
 
 /* Contact Section - Enhanced */
