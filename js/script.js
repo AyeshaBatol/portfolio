@@ -190,6 +190,14 @@ function initPortfolio() {
     const viewAllBtn = document.getElementById('view-all-btn');
     const mediaItems = [];
     
+    // Show loading state
+    portfolioGrid.innerHTML = `
+        <div class="portfolio-loading">
+            <div class="loader"></div>
+            <p class="loader-text">Loading Portfolio...</p>
+        </div>
+    `;
+    
     // Load images (1.jpg to 20.jpg)
     for (let i = 1; i <= 20; i++) {
         mediaItems.push({
@@ -234,6 +242,9 @@ function initPortfolio() {
                 validItems.push(item);
             }
         }
+
+        // Clear loading state
+        portfolioGrid.innerHTML = '';
 
         if (validItems.length === 0) {
             portfolioGrid.innerHTML = '<p>No media available.</p>';
