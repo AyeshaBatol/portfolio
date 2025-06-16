@@ -410,6 +410,33 @@ a {
     will-change: width;
 }
 
+/* Portfolio Loading State */
+.portfolio-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 300px;
+    grid-column: 1 / -1;
+}
+
+.portfolio-loading .loader {
+    width: 60px;
+    height: 60px;
+    border-width: 2px;
+}
+
+.portfolio-loading .loader::before,
+.portfolio-loading .loader::after {
+    display: none;
+}
+
+.portfolio-loading .loader-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
     .preloader {
@@ -436,6 +463,11 @@ a {
     
     .preloader::before {
         animation: none !important;
+    }
+
+    .portfolio-loading .loader {
+        animation: none !important;
+        border: 2px solid var(--accent);
     }
 }
 
@@ -472,6 +504,16 @@ a {
     
     .loader-progress {
         width: 160px;
+    }
+
+    .portfolio-loading .loader {
+        width: 50px;
+        height: 50px;
+    }
+
+    .portfolio-loading .loader-text {
+        font-size: 0.8rem;
+        margin-top: 15px;
     }
 }
 
