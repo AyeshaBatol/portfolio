@@ -168,6 +168,42 @@ function initAnimations() {
             ease: 'power3.out'
         });
 
+        //copy contact button settings
+
+ const copyButtons = document.querySelectorAll('.copy-btn');
+    
+    copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const textToCopy = this.getAttribute('data-clipboard-text');
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // Visual feedback
+                const originalIcon = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i>';
+                this.classList.add('success');
+                
+                // Create feedback element
+                const feedback = document.createElement('div');
+                feedback.className = 'copy-feedback';
+                feedback.textContent = 'Copied!';
+                this.parentNode.appendChild(feedback);
+                
+                // Position feedback
+                const rect = this.getBoundingClientRect();
+                feedback.style.left = `${rect.left}px`;
+                feedback.style.top = `${rect.top - 30}px`;
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    this.innerHTML = originalIcon;
+                    this.classList.remove('success');
+                    feedback.remove();
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        });
+    });
+        
         // Floating animation
         const floatElements = document.querySelectorAll('.image-container');
         floatElements.forEach(el => {
