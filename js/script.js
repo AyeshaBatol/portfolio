@@ -194,7 +194,7 @@ function initPortfolio() {
     portfolioGrid.innerHTML = `
         <div class="portfolio-loading">
             <div class="loader"></div>
-            <p class="loader-text">Loading Portfolio...</p>
+            <p class="loader-text">Loading Portfolio... <br> Please wait a few seconds</p>
         </div>
     `;
     
